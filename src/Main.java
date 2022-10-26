@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -65,12 +66,12 @@ public class Main {
                     String findProduct = scanner.nextLine();
                     System.out.println("Найдено: ");
                     for (int i = 0; i < products.size(); i++) {
-                        String queryLower = findProduct.toLowerCase();
-                        String itemLower = products.get(i).toLowerCase();
+                        String queryLower = findProduct.toLowerCase(Locale.ROOT);
+                        String itemLower = products.get(i).toLowerCase(Locale.ROOT);
                         if (itemLower.contains(queryLower)) {
                             System.out.println((i + 1) + ". " + products.get(i));
                         } else {
-                            System.out.println("Такого товара нет!");
+                            System.out.println(" - ");
                             continue;
                         }
                     }
